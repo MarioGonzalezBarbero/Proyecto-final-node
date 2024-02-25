@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li input[type="search"] {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+  }
+
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 5fr) 1fr repeat(2, 5fr);
+    grid-template-rows: 1fr repeat(2, 2fr) repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: 10px;
+}
+
+.div1 { grid-area: 1 / 1 / 4 / 6; }
+.div2 { grid-area: 1 / 1 / 4 / 3; }
+.div3 { grid-area: 1 / 4 / 4 / 6; }
+.div4 { grid-area: 1 / 1 / 2 / 3; }
+.div5 { grid-area: 1 / 4 / 2 / 6; }
+.div6 { grid-area: 2 / 1 / 4 / 3; overflow: hidden; white-space: nowrap; display: flex; }
+.div7 { grid-area: 2 / 4 / 4 / 6; overflow: hidden; white-space: nowrap; display: flex; }
+
+.div4, .div5, .div6, .div7 {
+    text-align: center;
+}
+
+.div6, .div7 {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Para mejorar el desplazamiento en dispositivos iOS */
+}
+
+.div6 img, .div7 img {
+    width: 10%;
+    margin: 5px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+}
+
+.div4,
+.div5 {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .contenedor-principal {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -85px;
+  }
+  
+  .estreno {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contenedor-anime,
+.contenedor-manga {
+  width: 47.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contenedor-anime {
+  margin-right: 5%;
+}
+  
+.manga-item,
+.anime-item {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  width: calc(100% - 10px); /* Ancho actualizado */
+}
+  .manga-title,
+  .anime-title {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+  
+  
+  .anime-name {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .anime-details {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .manga-image,
+  .anime-image {
+    width: 15%;
+    border-radius: 5px 5px 0 0;
+    margin: 5px;
+  }
+  
+  .anime-title {
+    background-color: #4CAF50;
+    border-radius: 0 0 5px 5px;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#leercapitulo">VERCAPITULO</a></li>
+            <li><a href="Pagina-principal.html">HOME</a></li>
+            <li><a href="/contacto">CONTACTO</a></li>
+            <li><a href="biblioteca.html">BIBLIOTECA</a></li>
+            <li><a href="/acceder">ACCESO</a></li>
+            <li><a href="/registrar">REGISTRO</a></li>
+            <li><input type="search" placeholder="Buscar.."></li>
+        </ul>
+    </nav>
+
+    <div class="parent">
+    <div class="div1"></div>
+    <div class="div2">Lateral izquierdo </div>
+    <div class="div3">Lateral derecho </div>
+    <div class="div4">Tendencias Manga </div>
+    <div class="div5">Tendencias Anime</div>
+    <div class="div6">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+<!---------------------------------------------------------------------------------------------------------------------->
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+<!------------------------------------------------------------------------------------------------------------------------>
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+<!------------------------------------------------------------------------------------------------------------------------->
+    </div>
+    <div class="div7">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+<!---------------------------------------------------------------------------------------------------------------------->
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+<!------------------------------------------------------------------------------------------------------------------------>
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen 2">
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen 3">
+
+        <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen 1">
+    </div>
+</div>
+
+
+
+
+    <div class="contenedor-principal">
+        <div class="estreno">ESTRENO</div>
+            <div class="contenedor-anime">
+                <div class="anime-item">
+                    <div class="anime-title">ANIME</div>
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">                 
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                  <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+                    
+                </div>
+
+            </div>
+    
+            <div class="contenedor-manga">
+                <div class="manga-item">
+                    <div class ="manga-title">MANGA</div>
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+  
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+  
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+  
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+  
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+                    
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Martial-Peak.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Kenja no Mago.jpg" alt="Imagen de anime 1" class="anime-image">
+                    <img src="C:\Users\gonza\OneDrive\Documentos\IAW\Imagenes\Mangas\Overlord.jpg" alt="Imagen de anime 1" class="anime-image">
+                </div>
+            </div>
+
+          
+        </div>
+     </div>
+
+<!-- Tu contenido HTML adicional va aquí -->
+
+</body>
+</html>

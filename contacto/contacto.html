@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li input[type="search"] {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+  }
+
+  /*----------Contacto.html--------*/
+
+  form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  form input[type="submit"] {
+    background-color: #101310;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #45a045;
+  }  
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#leercapitulo">VERCAPITULO</a></li>
+            <li><a href="Pagina-principal.html">HOME</a></li>
+            <li><a href="/contacto/">CONTACTO</a></li>
+            <li><a href="biblioteca.html">BIBLIOTECA</a></li>
+            <li><a href="/acceder">ACCESO</a></li>
+            <li><a href="/registrar">REGISTRO</a></li>
+            <li><input type="search" placeholder="Buscar.."></li>
+        </ul>
+    </nav>
+
+<form action="/contacto" method="post">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="subject">Subject:</label><br>
+    <input type="text" id="subject" name="subject"><br>
+    <input type="submit" value="Send Message">
+</form>
+
+<!-- Tu contenido HTML adicional va aquí -->
+
+</body>
+</html>
